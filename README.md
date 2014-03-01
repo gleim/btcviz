@@ -58,5 +58,6 @@ mvn spring-boot:run
 
 
 == Summary
+
 Congratulations! You just set up an embedded Neo4j server & stored some simple related entities from the Bitcoin ledger.  Now you can visualize the data in your web browser &/or run more advanced queries against the relations.
 
