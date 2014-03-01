@@ -19,19 +19,19 @@ public class Person {
     public Person(String name) { this.name = name; }
 
     @RelatedTo(type="TRANSACTS_WITH", direction=Direction.BOTH)
-    public @Fetch Set<Person> teammates;
+    public @Fetch Set<Person> transactors;
 
     public void transactsWith(Person person) {
-        if (teammates == null) {
-            teammates = new HashSet<Person>();
+        if (transactors == null) {
+            transactors = new HashSet<Person>();
         }
-        teammates.add(person);
+        transactors.add(person);
     }
 
     public String toString() {
         String results = name + " transacts with\n";
-        if (teammates != null) {
-            for (Person person : teammates) {
+        if (transactors != null) {
+            for (Person person : transactors) {
                 results += "\t- " + person.name + "\n";
             }
         }
