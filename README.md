@@ -5,16 +5,16 @@ projects: [spring-data-neo4j, BitcoinVisualizer]
 
 This repo translates Bitcoin blockchain data from JSON format into a simple Neo4j graph database (for data visualization and analysis).
 
-== You'll build
+== You'll create
 
 You'll use Neo4j's link:/understanding/NoSQL[NoSQL] graph-based data store to build an embedded Neo4j server, store Bitcoin blockchain entities and relationships.
 
 == You'll need
 
-. Java 7
-. Neo4J Community Edition 2.0.1
-. Gradle 1.8+ or Maven 3.0+
-. one or more ledger files in json/ (ledger #470000 is provided to start)
+- Java 7
+- Neo4J Community Edition 2.0.1
+- Gradle 1.8+ or Maven 3.0+
+- one or more ledger files in json/ (ledger #470000 is provided to start)
 
 == Build an executable JAR
 
