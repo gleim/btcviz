@@ -2,11 +2,8 @@
 tags: [bitcoin, property graph, spring-data, graph databases, neo4j]
 projects: [spring-data-neo4j, BitcoinVisualizer]
 ---
-:toc:
-:icons: font
-:source-highlighter: prettify
-:project_id: btcviz
-This guide walks you through the process of importing Bitcoin blockchain data from JSON format into a Neo4j graph database.
+
+This repo translates Bitcoin blockchain data from JSON format into a simple Neo4j graph database (for data visualization and analysis).
 
 == You'll build
 
