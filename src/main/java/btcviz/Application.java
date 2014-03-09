@@ -51,7 +51,7 @@ public class Application {
             // add uniqueness constraint
             graphDb.schema()
                             .constraintFor( DynamicLabel.label("Account"))
-                            .assertPropertyIsUnique("name")
+                            .assertPropertyIsUnique("address")
                             .create();
 
             // commit schema constraint
