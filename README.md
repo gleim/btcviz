@@ -13,7 +13,7 @@ You'll use Neo4j's link:/understanding/NoSQL[NoSQL] graph-based data store to bu
 
 - Java 7
 - Neo4J Community Edition 2.0.1
-- Gradle 1.8+ or Maven 3.0+
+- Maven 3.0+
 - one or more ledger files in json/ (ledger #470000 is provided to start)
 
 == Build an executable JAR
@@ -21,15 +21,10 @@ You'll use Neo4j's link:/understanding/NoSQL[NoSQL] graph-based data store to bu
 You can build a single executable JAR file that contains all the necessary dependencies, classes, and resources. This makes it easy to ship, version, and deploy the service as an application throughout the development lifecycle, across different environments, and so forth.
 
 
-./gradlew build
+mvn clean package 
 
 
 Then you can run the JAR file:
-
-java -jar build/libs/btcviz-0.1.0.jar
-
-
-If you are using Maven, you can run the application using mvn spring-boot:run. Or you can build the JAR file with mvn clean package and run the JAR by typing:
 
 java -jar target/btcviz-0.1.0.jar
 
@@ -37,22 +32,12 @@ java -jar target/btcviz-0.1.0.jar
 
 == Run the service
 
-If you are using Gradle, you can run your service at the command line this way:
-
-./gradlew clean build && java -jar build/libs/btcviz-0.1.0.jar
-
-
- If you are using Maven, you can run your service by typing: 
+You can run your service by typing: 
 
  mvn clean package && java -jar target/btcviz-0.1.0.jar.
 
 
-You can alternatively run the app directly from Gradle like this:
-
-./gradlew bootRun
-
-
-With mvn, you can run: 
+Or alternatively: 
 
 mvn spring-boot:run
 
