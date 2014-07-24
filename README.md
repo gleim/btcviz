@@ -71,8 +71,8 @@ sudo vi /etc/security/limits.conf
 
 Add the following lines to allow neo to create files as needed:
 ```
-*    soft    nofiles    40000
-*    soft    nofiles    40000
+*    soft    nofile    40000
+*    soft    nofile    40000
 ```
 
 Edit the following file:
