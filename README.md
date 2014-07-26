@@ -31,7 +31,7 @@ mvn clean package
 Run
 ---
 
-Use this command to run the JAR file:
+Use this command to run the executable JAR which will parse the JSON files contained in the json/ folder into a neo4j database:
 ```
 java -jar target/btcviz-0.1.0.jar
 ```
@@ -39,9 +39,9 @@ java -jar target/btcviz-0.1.0.jar
 Quickstart
 ----------
 
-You can first build & then run your service in one line by typing: 
+You can configure your AMI, build & run your service in one line by typing: 
 ```
-mvn clean package && java -jar target/btcviz-0.1.0.jar
+sudo apt-get install -y git maven && git clone https://github.com/gleim/btcviz && cd btcviz && mvn clean package && java -jar target/btcviz-0.1.0.jar
 ```
 
 
