@@ -1,6 +1,6 @@
 ---
-tags: [bitcoin, property graph, spring-data, graph databases, neo4j]
-projects: [spring-data-neo4j, BitcoinVisualizer]
+tags: [bitcoin, property graph, graph databases, neo4j]
+projects: [BitcoinVisualizer]
 ---
 
 This repo translates Bitcoin blockchain data from JSON format into a simple Neo4j graph database (for data visualization and analysis).
@@ -27,18 +27,11 @@ Use this command to build a single executable JAR file that parses JSON-formatte
 mvn clean package 
 ```
 
-Then you can run the JAR file:
-```
-java -jar target/btcviz-0.1.0.jar
-```
-
-The procedure above will create a runnable JAR. You can also opt to build a classic WAR file instead.
-
 
 Run
 ---
 
-Then you can run the JAR file:
+Use this command to run the JAR file:
 ```
 java -jar target/btcviz-0.1.0.jar
 ```
@@ -46,15 +39,11 @@ java -jar target/btcviz-0.1.0.jar
 Quickstart
 ----------
 
-You can run your service by typing: 
+You can first build & then run your service in one line by typing: 
 ```
 mvn clean package && java -jar target/btcviz-0.1.0.jar
 ```
 
-Or alternatively: 
-```
-mvn spring-boot:run
-```
 
 Result
 ------
