@@ -21,15 +21,16 @@ Requirements
 Build
 -----
 
-You can build a single executable JAR file that contains all the necessary dependencies, classes, and resources. This makes it easy to ship, version, and deploy the service as an application throughout the development lifecycle, across different environments, and so forth.
+Use this command to build a single executable JAR file that parses JSON-formatted blockchain ledger files and convert them into a database for neo4j.
 
-
+```
 mvn clean package 
-
+```
 
 Then you can run the JAR file:
-
+```
 java -jar target/btcviz-0.1.0.jar
+```
 
 The procedure above will create a runnable JAR. You can also opt to build a classic WAR file instead.
 
@@ -37,29 +38,40 @@ The procedure above will create a runnable JAR. You can also opt to build a clas
 Run
 ---
 
+Then you can run the JAR file:
+```
+java -jar target/btcviz-0.1.0.jar
+```
+
+Quickstart
+----------
+
 You can run your service by typing: 
-
- mvn clean package && java -jar target/btcviz-0.1.0.jar.
-
+```
+mvn clean package && java -jar target/btcviz-0.1.0.jar
+```
 
 Or alternatively: 
-
+```
 mvn spring-boot:run
+```
 
-This service will produce JSON representation of the blockchain, with each invidual block represented in a unique .JSON file
+Result
+------
+The result of running the executable JAR file will be a new *btcvizneo4j.db* file located in btcviz/db/
 
 
 AWS AMI configuration
 ---------------------
 
-Note: Amazon Linux AMI includes Java by default; Ubuntu AMI does not
-
-
-Launch a 64-bit Amazon Linux AMI & run this command to add neo4j:
+Launch a 64-bit Ubuntu AMI & run this command to add neo4j:
 
 ```
-sudo yum update -y && wget http://dist.neo4j.org/neo4j-community-2.0.1-unix.tar.gz && tar -xvzf neo4j-community-2.0.1-unix.tar.gz && mv neo4j-community-2.0.1 neo4j
+wget http://dist.neo4j.org/neo4j-community-2.0.1-unix.tar.gz && tar -xvzf neo4j-community-2.0.1-unix.tar.gz && mv neo4j-community-2.0.1 neo4j
 ```
+
+Neo4j configuration
+-------------------
 
 To configure neo4j for use on the AMI, follow these steps:
 
@@ -72,7 +84,7 @@ sudo vi /etc/security/limits.conf
 Add the following lines to allow neo to create files as needed:
 ```
 *    soft    nofile    40000
-*    soft    nofile    40000
+*    hard    nofile    40000
 ```
 
 Edit the following file:
@@ -85,14 +97,42 @@ Add the following line to allow external viewers to access:
 org.neo4j.server.webserver.address=0.0.0.0
 ```
 
+Modify the database.location to point to the database created with the executable JAR:
+```
+org.neo4j.server.database.location=/home/ubuntu/btcviz/db/btcvizneo4j.db
+```
+
+Prepare to run neo4j
+--------------------
+
+At this point, if you type:
+```
+ulimit -n
+```
+you will see the old Linux file maximum of 1024.
+
+
+Reboot the AMI to pick up the changes before proceeding further.
+
+
+At this point, if you type:
+```
+ulimit -n
+```
+you will see the new Linux file maximum of 40000, which is the minimum number of files needed to support neo4j operation.
+
+
+Run neo4j with btcviz database
+------------------------------
+
 Start neo4j:
 ```
 ./neo4j/bin/neo4j start
 ```
 
 
-Conclusion
-----------
+Result
+------
 
 We have used an embedded Neo4j server to store some simple related entities from the Bitcoin ledger.  Now you can visualize the data in your web browser &/or run more advanced queries against the relations.
 
