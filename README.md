@@ -41,7 +41,7 @@ Quickstart
 
 You can configure your AMI, build & run your service in one line by typing: 
 ```
-sudo apt-get install -y git maven && git clone https://github.com/gleim/btcviz && cd btcviz && mvn clean package && java -jar target/btcviz-0.1.0.jar
+sudo apt-get update && sudo apt-get install -y git maven && git clone https://github.com/gleim/btcviz && cd btcviz && mvn clean package && java -jar target/btcviz-0.1.0.jar
 ```
 
 
