@@ -125,5 +125,3 @@ Result
 
 We have used an embedded Neo4j server to store some simple related entities from the Bitcoin ledger.  Now you can visualize the data in your web browser &/or run more advanced queries against the relations.
 
-An example of this may be found at http://metabitco.in
-
