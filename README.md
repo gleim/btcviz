@@ -16,7 +16,7 @@ Requirements
 - Java 7
 - Neo4J Community Edition 2.0.1
 - Maven 3.0+
-- one or more ledger files in json/ (ledger #470000 is provided to start)
+- one or more ledger files in json/ subfolder
 
 Build
 -----
